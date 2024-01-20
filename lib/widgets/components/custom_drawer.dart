@@ -1,3 +1,6 @@
+import 'package:admin_dashboard/models/drawer_item_model.dart';
+import 'package:admin_dashboard/utils/app_assets.dart';
+import 'package:admin_dashboard/widgets/components/drawer_item.dart';
 import 'package:admin_dashboard/widgets/components/drawer_items_list_view.dart';
 import 'package:admin_dashboard/widgets/components/profile_picture_list_tile.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +17,42 @@ class _CustomDrawerState extends State<CustomDrawer> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Column(
-        children: [
-          ProfilePictureListTile(
-            name: "Lekan Okeowo",
-            email: "demo@gmail.com",
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: ProfilePictureListTile(
+              name: "Lekan Okeowo",
+              email: "demo@gmail.com",
+            ),
           ),
-          DrawrItemsListView()
+          SliverToBoxAdapter(
+              child: SizedBox(
+            height: 8,
+          )),
+          DrawrItemsListView(),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Expanded(child: SizedBox()),
+                InActiveDrawerItem(
+                  drawerItemModel: DrawerItemModel(
+                    title: "Setting system",
+                    image: Assets.imagesSettings,
+                  ),
+                ),
+                InActiveDrawerItem(
+                  drawerItemModel: DrawerItemModel(
+                    title: "Logout Account",
+                    image: Assets.imagesLogout,
+                  ),
+                ),
+                SizedBox(
+                  height: 48,
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
