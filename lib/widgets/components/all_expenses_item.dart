@@ -5,16 +5,22 @@ import 'package:flutter_svg/svg.dart';
 
 class AllExpensesItem extends StatelessWidget {
   final AllExpensesItemModel allExpensesItemModel;
-  const AllExpensesItem({super.key, required this.allExpensesItemModel});
+  final bool isSelected;
+  const AllExpensesItem(
+      {super.key,
+      required this.allExpensesItemModel,
+      required this.isSelected});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: isSelected == true ? const Color(0xff4EB7F2) : Colors.white,
           border: Border.all(
-            color: Color(0xFFF1F1F1),
+            color: isSelected == true
+                ? Colors.transparent
+                : const Color(0xFFF1F1F1),
             width: 1,
           ),
           borderRadius: BorderRadius.circular(12)),
@@ -26,21 +32,25 @@ class AllExpensesItem extends StatelessWidget {
               Container(
                 width: 60,
                 height: 60,
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: ShapeDecoration(
-                  color: Color(0xFFFAFAFA),
-                  shape: OvalBorder(),
+                  color: isSelected == true
+                      ? Colors.white.withOpacity(0.1)
+                      : const Color(0xFFFAFAFA),
+                  shape: const OvalBorder(),
                 ),
                 child: Center(
                   child: SvgPicture.asset(
                     allExpensesItemModel.image,
+                    color: isSelected == true ? Colors.white : null,
                   ),
                 ),
               ),
               const Spacer(),
-              const Icon(
+              Icon(
                 Icons.arrow_forward_ios,
-                color: Color(0xff064061),
+                color:
+                    isSelected == true ? Colors.white : const Color(0xff064061),
               )
             ],
           ),
@@ -50,7 +60,8 @@ class AllExpensesItem extends StatelessWidget {
           Text(
             allExpensesItemModel.title,
             style: AppStyles.textStyleSemiBold16.copyWith(
-              color: const Color(0xff064061),
+              color:
+                  isSelected == true ? Colors.white : const Color(0xff064061),
             ),
           ),
           const SizedBox(
@@ -59,7 +70,8 @@ class AllExpensesItem extends StatelessWidget {
           Text(
             allExpensesItemModel.date,
             style: AppStyles.textStyleSemiBold14.copyWith(
-              color: const Color(0xFFAAAAAA),
+              color:
+                  isSelected == true ? Colors.white : const Color(0xFFAAAAAA),
             ),
           ),
           const SizedBox(
@@ -68,7 +80,8 @@ class AllExpensesItem extends StatelessWidget {
           Text(
             allExpensesItemModel.price,
             style: AppStyles.textStyleSemiBold24.copyWith(
-              color: const Color(0xff4EB7F2),
+              color:
+                  isSelected == true ? Colors.white : const Color(0xff4EB7F2),
             ),
           )
         ],
