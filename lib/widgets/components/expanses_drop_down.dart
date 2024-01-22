@@ -1,3 +1,4 @@
+import 'package:admin_dashboard/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class ExpansesDropwDown extends StatefulWidget {
@@ -25,10 +26,17 @@ class _ExpansesDropwDownState extends State<ExpansesDropwDown> {
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
+          style: AppStyles.textStyleMedium16.copyWith(
+            color: const Color(0xFF064060),
+          ),
           value: dropDownValue,
           // isExpanded: true,
 
-          icon: Icon(Icons.expand_more),
+          icon: Icon(
+            Icons.expand_more,
+            size: 32,
+            color: Color(0xFF064060),
+          ),
           items: times.map((e) {
             return DropdownMenuItem(
               child: Text(e),

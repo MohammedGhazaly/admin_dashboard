@@ -1,8 +1,13 @@
+import 'package:admin_dashboard/models/all_expenses_item_model.dart';
+import 'package:admin_dashboard/utils/app_assets.dart';
 import 'package:admin_dashboard/utils/app_styles.dart';
+import 'package:admin_dashboard/widgets/components/all_expenses_item.dart';
+import 'package:admin_dashboard/widgets/components/all_expenses_items_row.dart';
 import 'package:admin_dashboard/widgets/components/custom_drawer.dart';
 import 'package:admin_dashboard/widgets/components/expanses_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:flutter_svg/svg.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key});
@@ -55,6 +60,10 @@ class AllExpanses extends StatelessWidget {
               ExpansesDropwDown()
             ],
           ),
+          const SizedBox(
+            height: 16,
+          ),
+          AllExpensesItemRow(),
         ],
       ),
     );
