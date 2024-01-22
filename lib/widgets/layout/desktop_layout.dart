@@ -1,8 +1,5 @@
-import 'package:admin_dashboard/utils/app_styles.dart';
 import 'package:admin_dashboard/widgets/components/all_expanses.dart';
-import 'package:admin_dashboard/widgets/components/all_expenses_items_row.dart';
 import 'package:admin_dashboard/widgets/components/custom_drawer.dart';
-import 'package:admin_dashboard/widgets/components/expanses_drop_down.dart';
 import 'package:admin_dashboard/widgets/components/quick_invoice.dart';
 import 'package:flutter/material.dart';
 
@@ -21,19 +18,20 @@ class DesktopLayout extends StatelessWidget {
           width: 32,
         ),
         Expanded(
-            flex: 3,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                AllExpanses(),
-                SizedBox(
-                  height: 24,
-                ),
-                QuickInvoice(),
-              ],
-            ))
+          flex: 3,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 40,
+              ),
+              AllExpanses(),
+              SizedBox(
+                height: 24,
+              ),
+              QuickInvoice(),
+            ],
+          ),
+        )
       ],
     );
   }

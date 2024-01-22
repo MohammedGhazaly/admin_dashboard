@@ -1,4 +1,8 @@
+import 'package:admin_dashboard/models/user_info_model.dart';
+import 'package:admin_dashboard/utils/app_assets.dart';
 import 'package:admin_dashboard/utils/app_styles.dart';
+import 'package:admin_dashboard/widgets/components/latest_transaction_section.dart';
+import 'package:admin_dashboard/widgets/components/profile_picture_list_tile.dart';
 import 'package:admin_dashboard/widgets/components/quick_invoice_header.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +18,13 @@ class QuickInvoice extends StatelessWidget {
         color: Colors.white,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           QuickInvoiceHeader(),
+          SizedBox(
+            height: 36,
+          ),
+          LatestTransactionSection()
         ],
       ),
     );
