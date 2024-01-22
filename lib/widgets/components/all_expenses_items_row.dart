@@ -31,30 +31,42 @@ class AllExpensesItemRow extends StatefulWidget {
 }
 
 class _AllExpensesItemRowState extends State<AllExpensesItemRow> {
-  var index = 0;
+  var activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: AllExpensesItemRow.items.asMap().entries.map((e) {
-        int index = e.key;
+        int selectedIndex = e.key;
         var item = e.value;
-        if (index == 1) {
+        if (selectedIndex == 1) {
           return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child:
-                  AllExpensesItem(allExpensesItemModel: item, isSelected: true),
+            child: InkWell(
+              onTap: () {
+                onTap(itemIndex: selectedIndex);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpensesItem(
+                    allExpensesItemModel: item,
+                    isSelected: selectedIndex == activeIndex),
+              ),
             ),
           );
         } else {
           return Expanded(
-              child: AllExpensesItem(
-            allExpensesItemModel: item,
-            isSelected: false,
+              child: InkWell(
+            onTap: () {
+              onTap(itemIndex: selectedIndex);
+            },
+            child: AllExpensesItem(
+              allExpensesItemModel: item,
+              isSelected: selectedIndex == activeIndex,
+            ),
           ));
         }
       }).toList(),
     );
+
     //   children: items
     //       .map((e) => Expanded(
     //               child: Padding(
@@ -71,5 +83,10 @@ class _AllExpensesItemRowState extends State<AllExpensesItemRow> {
     //         allExpensesItemModel: items[index],
     //       );
     //     });
+  }
+
+  void onTap({required int itemIndex}) {
+    activeIndex = itemIndex;
+    setState(() {});
   }
 }

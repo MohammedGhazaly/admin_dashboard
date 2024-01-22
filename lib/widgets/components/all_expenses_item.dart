@@ -13,7 +13,8 @@ class AllExpensesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 500),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       decoration: BoxDecoration(
           color: isSelected == true ? const Color(0xff4EB7F2) : Colors.white,
@@ -42,6 +43,7 @@ class AllExpensesItem extends StatelessWidget {
                 child: Center(
                   child: SvgPicture.asset(
                     allExpensesItemModel.image,
+                    // colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
                     color: isSelected == true ? Colors.white : null,
                   ),
                 ),
