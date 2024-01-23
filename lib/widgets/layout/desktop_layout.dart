@@ -30,9 +30,16 @@ class DesktopLayout extends StatelessWidget {
                   height: 24,
                 ),
                 QuickInvoice(),
+                SizedBox(
+                  height: 32,
+                ),
               ],
             ),
           ),
+        ),
+        Expanded(
+          flex: 1,
+          child: SizedBox(),
         )
       ],
     );
