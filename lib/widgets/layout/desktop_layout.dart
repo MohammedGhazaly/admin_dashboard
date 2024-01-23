@@ -1,6 +1,5 @@
-import 'package:admin_dashboard/widgets/components/all_expanses.dart';
+import 'package:admin_dashboard/widgets/components/all_expenses_and_quick_invoice_section.dart';
 import 'package:admin_dashboard/widgets/components/custom_drawer.dart';
-import 'package:admin_dashboard/widgets/components/quick_invoice.dart';
 import 'package:flutter/material.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -20,21 +19,7 @@ class DesktopLayout extends StatelessWidget {
         Expanded(
           flex: 3,
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                AllExpanses(),
-                SizedBox(
-                  height: 24,
-                ),
-                QuickInvoice(),
-                SizedBox(
-                  height: 32,
-                ),
-              ],
-            ),
+            child: AllExpensesAndQuickInvoiceSection(),
           ),
         ),
         Expanded(
