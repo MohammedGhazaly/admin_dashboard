@@ -1,8 +1,7 @@
-import 'package:admin_dashboard/models/user_info_model.dart';
-import 'package:admin_dashboard/utils/app_assets.dart';
 import 'package:admin_dashboard/utils/app_styles.dart';
+import 'package:admin_dashboard/widgets/components/custom_text_field_with_title.dart';
 import 'package:admin_dashboard/widgets/components/latest_transaction_section.dart';
-import 'package:admin_dashboard/widgets/components/profile_picture_list_tile.dart';
+import 'package:admin_dashboard/widgets/components/quick_invoice_form.dart';
 import 'package:admin_dashboard/widgets/components/quick_invoice_header.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,9 @@ class QuickInvoice extends StatelessWidget {
           SizedBox(
             height: 36,
           ),
-          LatestTransactionSection()
+          LatestTransactionSection(),
+          Divider(height: 48),
+          QuickInvoiceForm()
         ],
       ),
     );
