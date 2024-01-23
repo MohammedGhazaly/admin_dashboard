@@ -14,12 +14,16 @@ class Assets {
   static const String imagesCategory = "assets/images/category.svg";
 
   /// Assets for imagesCreditCard
-  /// assets/images/credit-card.svg
-  static const String imagesCreditCard = "assets/images/credit-card.svg";
+  /// assets/images/credit_card.png
+  static const String imagesCreditCard = "assets/images/credit_card.png";
 
   /// Assets for imagesExpanses
   /// assets/images/expanses.svg
   static const String imagesExpanses = "assets/images/expanses.svg";
+
+  /// Assets for imagesGallery
+  /// assets/images/gallery.svg
+  static const String imagesGallery = "assets/images/gallery.svg";
 
   /// Assets for imagesIncome
   /// assets/images/income.svg
