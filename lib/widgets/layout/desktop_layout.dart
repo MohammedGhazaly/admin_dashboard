@@ -1,6 +1,7 @@
 import 'package:admin_dashboard/widgets/components/all_expenses_and_quick_invoice_section.dart';
 import 'package:admin_dashboard/widgets/components/custom_drawer.dart';
 import 'package:admin_dashboard/widgets/components/my_card.dart';
+import 'package:admin_dashboard/widgets/components/my_card_and_transaction_history.dart';
 import 'package:admin_dashboard/widgets/components/my_cards_page_view.dart';
 import 'package:admin_dashboard/widgets/components/my_cards_section.dart';
 import 'package:admin_dashboard/widgets/components/transaction_history.dart';
@@ -30,8 +31,8 @@ class DesktopLayout extends StatelessWidget {
           width: 24,
         ),
         Expanded(
-          flex: 1,
-          child: TransactionHistory(),
+          flex: 2,
+          child: MyCardAndTransactionHistory(),
         )
       ],
     );
