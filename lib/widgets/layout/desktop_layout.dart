@@ -3,6 +3,7 @@ import 'package:admin_dashboard/widgets/components/custom_drawer.dart';
 import 'package:admin_dashboard/widgets/components/my_card.dart';
 import 'package:admin_dashboard/widgets/components/my_cards_page_view.dart';
 import 'package:admin_dashboard/widgets/components/my_cards_section.dart';
+import 'package:admin_dashboard/widgets/components/transaction_history.dart';
 import 'package:flutter/material.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -30,7 +31,7 @@ class DesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 1,
-          child: MyCardsSection(),
+          child: TransactionHistory(),
         )
       ],
     );
