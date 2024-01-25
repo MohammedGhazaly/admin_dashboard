@@ -4,7 +4,7 @@ class TransactionModel {
   final String amount;
   final bool isWithdrawl;
 
-  TransactionModel(
+  const TransactionModel(
       {required this.name,
       required this.date,
       required this.amount,

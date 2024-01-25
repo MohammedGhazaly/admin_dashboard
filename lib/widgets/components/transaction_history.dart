@@ -1,4 +1,5 @@
 import 'package:admin_dashboard/utils/app_styles.dart';
+import 'package:admin_dashboard/widgets/components/transaction_history_list_view.dart';
 import 'package:flutter/material.dart';
 
 class TransactionHistory extends StatelessWidget {
@@ -18,14 +19,12 @@ class TransactionHistory extends StatelessWidget {
                 color: const Color(0xff064061),
               ),
             ),
-            Expanded(
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "View All",
-                  style: AppStyles.textStyleMedium16
-                      .copyWith(color: const Color(0xff4EB7F2)),
-                ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "View All",
+                style: AppStyles.textStyleMedium16
+                    .copyWith(color: const Color(0xff4EB7F2)),
               ),
             ),
           ],
@@ -38,7 +37,8 @@ class TransactionHistory extends StatelessWidget {
           style: AppStyles.textStyleMedium16.copyWith(
             color: const Color(0xffAAAAAA),
           ),
-        )
+        ),
+        TransactionHistoryListView()
       ],
     );
   }
