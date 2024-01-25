@@ -1,5 +1,22 @@
 import 'package:flutter/material.dart';
 
+class DotsIndicators extends StatelessWidget {
+  const DotsIndicators({super.key, required this.currentPage});
+  final int currentPage;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: List.generate(3, (index) {
+        return Padding(
+          padding: const EdgeInsets.only(right: 6),
+          child: CustomDot(isActive: currentPage == index),
+        );
+      }),
+    );
+  }
+}
+
 class CustomDot extends StatelessWidget {
   const CustomDot({super.key, required this.isActive});
   final bool isActive;

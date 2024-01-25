@@ -2,6 +2,7 @@ import 'package:admin_dashboard/widgets/components/all_expenses_and_quick_invoic
 import 'package:admin_dashboard/widgets/components/custom_drawer.dart';
 import 'package:admin_dashboard/widgets/components/my_card.dart';
 import 'package:admin_dashboard/widgets/components/my_cards_page_view.dart';
+import 'package:admin_dashboard/widgets/components/my_cards_section.dart';
 import 'package:flutter/material.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -29,7 +30,7 @@ class DesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 1,
-          child: MyCardsPageView(),
+          child: MyCardsSection(),
         )
       ],
     );
