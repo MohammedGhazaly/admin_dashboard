@@ -19,7 +19,8 @@ class DesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 3,
-          child: AllExpensesAndQuickInvoiceSection(),
+          child:
+              SingleChildScrollView(child: AllExpensesAndQuickInvoiceSection()),
         ),
         SizedBox(
           width: 24,
